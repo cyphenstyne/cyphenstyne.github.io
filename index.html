@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Choose Your Pill NEO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="vignette"></div>
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <div id="stage">
+    <div id="morpheus-wrap">
+      <div id="speech-wrap">
+        <div class="bubble">
+          <span class="bubble-text">choose your pill,<br>choose your reality.</span>
+        </div>
+      </div>
+
+      <img
+        id="morpheus-img"
+        src="assets/morpheus.png"
+        alt="Morpheus offering two pills"
+      >
+
+      <button class="pill-btn" id="btn-blue" data-pill="blue" aria-label="Blue pill">
+        <img src="assets/BluePill.png" alt="Blue pill">
+      </button>
+
+      <button class="pill-btn" id="btn-red" data-pill="red" aria-label="Red pill">
+        <img src="assets/RedPill.png" alt="Red pill">
+      </button>
+    </div>
+
+  </div>
+
+  <script src="matrix.js" defer></script>
+  <script src="index.js" defer></script>
+</body>
+</html>

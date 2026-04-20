@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Full Stack Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">Hi! I'm Aritra</a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#work-style">Work Style</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <p class="eyebrow">Full Stack Engineer</p>
+        <h1>I build practical, reliable web products from frontend to deployment.</h1>
+        <p>
+          This is a clean portfolio prototype focused on clarity over decoration. It highlights
+          your stack, how you approach building software, and what kind of projects you can own.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Get In Touch</a>
+        </div>
+        <ul class="meta-list">
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React</li>
+          <li><strong>Core Language:</strong> Java</li>
+          <li><strong>DevOps and Tools:</strong> Linux, Git, GitHub, AWS</li>
+        </ul>
+      </div>
+
+      <aside class="card side-card" aria-label="Current focus">
+        <h2>Current Focus</h2>
+        <p>Building maintainable full stack applications with clear UX and production-ready workflows.</p>
+        <ul>
+          <li>Designing interfaces that are simple and user-focused</li>
+          <li>Writing clean APIs and business logic in Java</li>
+          <li>Deploying projects with GitHub-based CI and AWS services</li>
+          <li>Growing toward larger systems and deeper cloud architecture</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>
+            I am a full stack engineer who values clear architecture, practical decisions,
+            and thoughtful implementation. I enjoy solving end-to-end product problems,
+            from user interface details to deployment and operations.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-note">
+            <p>
+              Most portfolio sites are split into clear sections: Hero, About, Skills, Projects,
+              Experience, and Contact. This prototype follows that structure so it is easy to extend
+              as you add more projects and technologies.
+            </p>
+            <p>
+              Keep this page as your baseline, then iterate by replacing placeholder project content
+              with real case studies and links.
+            </p>
+          </article>
+
+          <article class="about-note">
+            <h3>Highlights</h3>
+            <div class="chips" aria-label="Highlights">
+              <span class="chip">Frontend + Backend</span>
+              <span class="chip">API Development</span>
+              <span class="chip">Cloud Deployment</span>
+              <span class="chip">Version Control</span>
+              <span class="chip">Linux Workflow</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>Organized by the areas you currently work in most.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card">
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+              <li>HTML for semantic, accessible structure</li>
+              <li>CSS for responsive layouts and polished UI</li>
+              <li>JavaScript for interactive functionality</li>
+              <li>React for component-driven applications</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Backend</h3>
+            <ul class="skill-list">
+              <li>Java for APIs and business logic</li>
+              <li>REST-friendly service design</li>
+              <li>Clean code and maintainable structure</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Tools and Cloud</h3>
+            <ul class="skill-list">
+              <li>Linux command-line workflow</li>
+              <li>Git and GitHub for collaboration</li>
+              <li>AWS fundamentals for deployment and hosting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p>Prototype project cards. Replace these with your real projects as you grow your portfolio.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <h3>Developer Portfolio</h3>
+            <p>Responsive portfolio website to present skills, projects, and contact details in a clear layout.</p>
+            <ul class="project-list">
+              <li>Tech: HTML, CSS</li>
+              <li>Goal: Personal brand foundation</li>
+            </ul>
+            <a class="project-link" href="#">Case Study (soon)</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Task Tracker API</h3>
+            <p>Backend service for creating, updating, and organizing tasks with secure endpoints and clean design.</p>
+            <ul class="project-list">
+              <li>Tech: Java, GitHub</li>
+              <li>Goal: Practice backend architecture</li>
+            </ul>
+            <a class="project-link" href="#">Repository (soon)</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Cloud Deployment Starter</h3>
+            <p>Simple deployment template to ship full stack projects faster with version-controlled infrastructure steps.</p>
+            <ul class="project-list">
+              <li>Tech: AWS, Linux, Git</li>
+              <li>Goal: Repeatable deployment process</li>
+            </ul>
+            <a class="project-link" href="#">Architecture Notes (soon)</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work-style">
+      <div class="container">
+        <div class="section-head">
+          <h2>Work Style</h2>
+          <p>How you can position your engineering approach right now.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="card">
+            <h3>Product-Minded</h3>
+            <ul class="work-list">
+              <li>I focus on solving user problems, not only writing code.</li>
+              <li>I keep interfaces clear and workflows easy to understand.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Structured Delivery</h3>
+            <ul class="work-list">
+              <li>I break work into milestones and ship in small iterations.</li>
+              <li>I prioritize reliability and readability in implementation.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Continuous Growth</h3>
+            <ul class="work-list">
+              <li>I actively expand my stack and apply it to real projects.</li>
+              <li>This portfolio is built to evolve as new skills are added.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <article class="card contact-card">
+          <div class="contact-copy">
+            <h2>Contact</h2>
+            <p>
+              Add your real links and email here when ready.
+              Keep this section short and direct so recruiters can reach you quickly.
+            </p>
+          </div>
+
+          <ul class="contact-links" aria-label="Contact links">
+            <li><a href="mailto:youremail@example.com">Email</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">2026 - Aritra Kumar - Full Stack Engineer</div>
+  </footer>
+  <script src="portfolio.js" defer></script>
+</body>
+</html>

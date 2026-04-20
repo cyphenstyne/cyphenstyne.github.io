@@ -1,0 +1,451 @@
+:root {
+  --bg: #fbf1c7;
+  --bg-glow-1: rgba(215, 153, 33, 0.2);
+  --bg-glow-2: rgba(184, 187, 38, 0.15);
+  --surface: #f2e5bc;
+  --surface-alt: #ebdbb2;
+  --text: #3c3836;
+  --muted: #665c54;
+  --line: #d5c4a1;
+  --accent: #458588;
+  --accent-strong: #076678;
+  --accent-shadow: 0 8px 20px rgba(69, 133, 136, 0.25);
+  --chip: #ebdbb2;
+  --chip-text: #504945;
+  --chip-line: #bdae93;
+  --panel-text: #3c3836;
+  --header-bg: rgba(251, 241, 199, 0.9);
+  --contact-hover-line: #bdae93;
+  --shadow: 0 16px 36px rgba(102, 92, 84, 0.2);
+  --radius: 18px;
+  --max-width: 1100px;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #141617;
+  --bg-glow-1: rgba(146, 131, 116, 0.14);
+  --bg-glow-2: rgba(80, 73, 69, 0.2);
+  --surface: #202324;
+  --surface-alt: #2b2f30;
+  --text: #ebdbb2;
+  --muted: #a89984;
+  --line: #504945;
+  --accent: #83a598;
+  --accent-strong: #8ec07c;
+  --accent-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  --chip: #323638;
+  --chip-text: #d5c4a1;
+  --chip-line: #5a524c;
+  --panel-text: #ddc7a1;
+  --header-bg: rgba(20, 22, 23, 0.9);
+  --contact-hover-line: #665c54;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 5%, var(--bg-glow-1), transparent 24%),
+    radial-gradient(circle at 92% 12%, var(--bg-glow-2), transparent 28%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  background: var(--header-bg);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  gap: 1rem;
+}
+
+.brand {
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-list a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.48rem 0.9rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+  padding: 5.5rem 0 3.2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: var(--surface);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 1.1rem;
+}
+
+.hero p {
+  max-width: 62ch;
+  color: var(--muted);
+  margin-bottom: 1.35rem;
+  font-size: 1.03rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--accent-shadow);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.meta-list {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.meta-list strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+}
+
+.side-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.side-card p {
+  margin-bottom: 0.8rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.side-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.side-card li {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.55rem 0.65rem;
+  background: var(--surface-alt);
+  font-size: 0.92rem;
+  color: var(--panel-text);
+}
+
+.section-head {
+  margin-bottom: 1.2rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+  margin-bottom: 0.35rem;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+}
+
+.about-note {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.2rem;
+}
+
+.about-note p {
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.about-note p:last-child {
+  margin-bottom: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.chip {
+  background: var(--chip);
+  color: var(--chip-text);
+  border: 1px solid var(--chip-line);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.skills-grid,
+.project-grid,
+.work-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skills-grid h3,
+.project-grid h3,
+.work-grid h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-list,
+.project-list,
+.work-list {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.skill-list li,
+.project-list li,
+.work-list li {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.contact {
+  padding-bottom: 5rem;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-copy p {
+  color: var(--muted);
+  margin-top: 0.35rem;
+  max-width: 64ch;
+}
+
+.contact-links {
+  list-style: none;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-links a:hover {
+  border-color: var(--contact-hover-line);
+  color: var(--accent);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  padding: 1rem 0 2rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid,
+  .project-grid,
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-wrap {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.6rem 0;
+  }
+
+  .theme-toggle {
+    margin-top: 0.35rem;
+  }
+
+  .skills-grid,
+  .project-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 4.3rem;
+  }
+
+  .section {
+    padding: 3.7rem 0;
+  }
+}

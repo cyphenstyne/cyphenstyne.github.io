@@ -19,10 +19,18 @@ body {
   min-height: 100%;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   display: grid;
   place-items: center;
-  padding: 1rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(env(safe-area-inset-top) + 1rem) calc(env(safe-area-inset-right) + 1rem)
+    calc(env(safe-area-inset-bottom) + 1rem) calc(env(safe-area-inset-left) + 1rem);
   background: radial-gradient(circle at 20% 10%, #102217, transparent 35%), var(--bg);
   color: var(--text);
   font-family: "JetBrains Mono", monospace;
@@ -77,6 +85,10 @@ body {
   line-height: 1.45;
 }
 
+.terminal-body p {
+  overflow-wrap: anywhere;
+}
+
 .prompt {
   color: var(--prompt);
 }
@@ -85,4 +97,20 @@ body {
   color: var(--muted);
   padding-left: 0.2rem;
   margin-bottom: 0.35rem;
+}
+
+@media (max-width: 620px) {
+  body {
+    padding: calc(env(safe-area-inset-top) + 0.7rem) calc(env(safe-area-inset-right) + 0.7rem)
+      calc(env(safe-area-inset-bottom) + 0.7rem) calc(env(safe-area-inset-left) + 0.7rem);
+  }
+
+  .terminal-shell {
+    border-radius: 10px;
+  }
+
+  .terminal-body {
+    font-size: 0.93rem;
+    padding: 0.85rem;
+  }
 }

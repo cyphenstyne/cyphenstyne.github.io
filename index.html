@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Choose Your Pill NEO</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -13,10 +13,15 @@
 
   <div id="stage">
     <div id="morpheus-wrap">
-      <div id="speech-wrap">
+      <div id="speech-wrap" aria-hidden="true">
         <div class="bubble">
           <span class="bubble-text">choose your pill,<br>choose your reality.</span>
         </div>
+      </div>
+
+      <div id="pill-hints" aria-hidden="true">
+        <div class="pill-bubble" id="hint-blue">simple portfolio website</div>
+        <div class="pill-bubble" id="hint-red">terminal based navigation</div>
       </div>
 
       <img

@@ -289,7 +289,7 @@ body::after {
   }
 
   #speech-wrap {
-    top: clamp(-92px, -17vw, -60px);
+    top: clamp(-128px, -26vw, -90px);
     width: min(92vw, 520px);
   }
 
@@ -304,11 +304,11 @@ body::after {
   }
 
   .pill-btn {
-    width: clamp(18px, 4.8vw, 23px);
+    width: clamp(16px, 4.3vw, 20px);
   }
 
   .pill-btn img {
-    width: 78%;
+    width: 68%;
   }
 
   #hint-blue {
@@ -340,7 +340,7 @@ body::after {
   }
 
   #speech-wrap {
-    top: clamp(-84px, -16vw, -56px);
+    top: clamp(-118px, -27vw, -92px);
   }
 
   #btn-blue {
@@ -354,11 +354,11 @@ body::after {
   }
 
   .pill-btn {
-    width: clamp(17px, 4.9vw, 21px);
+    width: clamp(15px, 4.2vw, 18px);
   }
 
   .pill-btn img {
-    width: 74%;
+    width: 64%;
   }
 
   #hint-blue {

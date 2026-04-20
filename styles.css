@@ -294,27 +294,31 @@ body::after {
   }
 
   #btn-blue {
-    left: 19.9%;
-    top: 84%;
+    left: 18.9%;
+    top: 84.9%;
   }
 
   #btn-red {
-    left: 80.1%;
-    top: 84%;
+    left: 81.1%;
+    top: 84.9%;
   }
 
   .pill-btn {
-    width: clamp(24px, 6.2vw, 30px);
+    width: clamp(18px, 4.8vw, 23px);
+  }
+
+  .pill-btn img {
+    width: 78%;
   }
 
   #hint-blue {
-    left: 19.9%;
-    top: 76.2%;
+    left: 18.9%;
+    top: 76.1%;
   }
 
   #hint-red {
-    left: 80.1%;
-    top: 76.2%;
+    left: 81.1%;
+    top: 76.1%;
   }
 
   .pill-bubble {
@@ -340,23 +344,31 @@ body::after {
   }
 
   #btn-blue {
-    left: 20.4%;
-    top: 83.8%;
+    left: 19.3%;
+    top: 84.7%;
   }
 
   #btn-red {
-    left: 79.6%;
-    top: 83.8%;
+    left: 80.7%;
+    top: 84.7%;
+  }
+
+  .pill-btn {
+    width: clamp(17px, 4.9vw, 21px);
+  }
+
+  .pill-btn img {
+    width: 74%;
   }
 
   #hint-blue {
-    left: 20.4%;
-    top: 75.8%;
+    left: 19.3%;
+    top: 75.7%;
   }
 
   #hint-red {
-    left: 79.6%;
-    top: 75.8%;
+    left: 80.7%;
+    top: 75.7%;
   }
 
   .pill-bubble {

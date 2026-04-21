@@ -70,8 +70,8 @@ function handlePillSelection(pill) {
   window.location.href = destination;
 }
 
-document.querySelectorAll(".pill-btn").forEach((btn) => {
-  const pill = btn.dataset.pill;
+document.querySelectorAll(".palm-btn").forEach((btn) => {
+  const pill = btn.dataset.destination;
 
   btn.addEventListener("pointerenter", () => {
     void warmDestination(pill);

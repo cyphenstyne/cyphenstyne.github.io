@@ -7,10 +7,11 @@
 :root {
   --scene-ratio: 1.1538;
   --scene-headroom: clamp(132px, 23vh, 188px);
-  --pill-size: 14px;
-  --pill-blue-x: 18%;
-  --pill-red-x: 82%;
-  --pill-y: 84.5%;
+  --palm-blue-x: 18%;
+  --palm-red-x: 82%;
+  --palm-y: 84.5%;
+  --palm-hit-width: 22%;
+  --palm-hit-height: 16.5%;
   --hint-y: 76.8%;
 }
 
@@ -104,68 +105,54 @@ body::after {
   filter: grayscale(15%) contrast(1.1) brightness(0.9);
 }
 
-.pill-btn {
+.palm-btn {
   position: absolute;
   z-index: 30;
   border: 0;
-  background: transparent;
+  background: rgba(255, 255, 255, 0);
   border-radius: 999px;
   cursor: pointer;
-  width: var(--pill-size);
-  aspect-ratio: 1 / 1;
+  width: var(--palm-hit-width);
+  height: var(--palm-hit-height);
   transform: translate(-50%, -50%);
-  transition: transform 0.18s, filter 0.18s;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
   touch-action: manipulation;
-  display: grid;
-  place-items: center;
 }
 
-.pill-btn::before {
+.palm-btn::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 34px;
-  height: 34px;
-  transform: translate(-50%, -50%);
+  inset: -8%;
 }
 
 #btn-blue {
-  left: var(--pill-blue-x);
-  top: var(--pill-y);
+  left: var(--palm-blue-x);
+  top: var(--palm-y);
 }
 
 #btn-red {
-  left: var(--pill-red-x);
-  top: var(--pill-y);
-}
-
-.pill-btn img {
-  width: 100%;
-  height: auto;
-  display: block;
-  pointer-events: none;
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.65));
+  left: var(--palm-red-x);
+  top: var(--palm-y);
 }
 
 #btn-blue:hover,
-#btn-blue:focus-visible {
-  transform: translate(-50%, -50%) scale(1.14);
-  filter: brightness(1.22) saturate(1.08);
-  outline: none;
+#btn-red:hover {
+  transform: translate(-50%, -50%) scale(1.03);
 }
 
-#btn-red:hover,
+#btn-blue:focus-visible,
 #btn-red:focus-visible {
-  transform: translate(-50%, -50%) scale(1.14);
-  filter: brightness(1.22) saturate(1.08);
-  outline: none;
+  outline: 2px solid rgba(235, 247, 255, 0.9);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.55);
 }
 
 #btn-blue:active,
 #btn-red:active {
-  transform: translate(-50%, -50%) scale(0.95);
+  transform: translate(-50%, -50%) scale(0.97);
 }
 
 #speech-wrap {
@@ -273,13 +260,13 @@ body::after {
 }
 
 #hint-blue {
-  left: var(--pill-blue-x);
+  left: var(--palm-blue-x);
   top: var(--hint-y);
   background: #cde6ff;
 }
 
 #hint-red {
-  left: var(--pill-red-x);
+  left: var(--palm-red-x);
   top: var(--hint-y);
   background: #ffd2d2;
 }
@@ -312,9 +299,11 @@ body::after {
 
 @media (max-width: 640px) {
   :root {
-    --pill-blue-x: 20%;
-    --pill-red-x: 80%;
-    --pill-y: 84.8%;
+    --palm-blue-x: 21%;
+    --palm-red-x: 79%;
+    --palm-y: 84.3%;
+    --palm-hit-width: 21.5%;
+    --palm-hit-height: 15.5%;
     --hint-y: 76%;
   }
 
@@ -347,9 +336,11 @@ body::after {
 
 @media (max-width: 480px) {
   :root {
-    --pill-blue-x: 22.5%;
-    --pill-red-x: 77.5%;
-    --pill-y: 84.4%;
+    --palm-blue-x: 23.2%;
+    --palm-red-x: 76.8%;
+    --palm-y: 84%;
+    --palm-hit-width: 22%;
+    --palm-hit-height: 16%;
     --hint-y: 75.2%;
   }
 
@@ -363,9 +354,11 @@ body::after {
 
 @media (max-width: 420px) {
   :root {
-    --pill-blue-x: 23.5%;
-    --pill-red-x: 76.5%;
-    --pill-y: 84.1%;
+    --palm-blue-x: 24.1%;
+    --palm-red-x: 75.9%;
+    --palm-y: 83.8%;
+    --palm-hit-width: 22.5%;
+    --palm-hit-height: 16.2%;
     --hint-y: 74.8%;
   }
 
@@ -383,9 +376,11 @@ body::after {
 
 @media (max-width: 360px) {
   :root {
-    --pill-blue-x: 24.5%;
-    --pill-red-x: 75.5%;
-    --pill-y: 84%;
+    --palm-blue-x: 25.1%;
+    --palm-red-x: 74.9%;
+    --palm-y: 83.6%;
+    --palm-hit-width: 23%;
+    --palm-hit-height: 16.4%;
     --hint-y: 74.4%;
   }
 
@@ -399,7 +394,7 @@ body::after {
 @media (max-height: 700px) {
   :root {
     --scene-headroom: clamp(120px, 20vh, 160px);
-    --pill-y: 84%;
+    --palm-y: 84%;
     --hint-y: 75.8%;
   }
 
@@ -415,7 +410,7 @@ body::after {
 @media (max-height: 560px) {
   :root {
     --scene-headroom: clamp(96px, 18vh, 124px);
-    --pill-y: 83.7%;
+    --palm-y: 83.7%;
     --hint-y: 74.6%;
   }
 

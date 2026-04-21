@@ -4,6 +4,15 @@
   padding: 0;
 }
 
+:root {
+  --scene-ratio: 1.1538;
+  --scene-headroom: clamp(132px, 23vh, 188px);
+  --pill-blue-x: 18%;
+  --pill-red-x: 82%;
+  --pill-y: 84.5%;
+  --hint-y: 76.8%;
+}
+
 html,
 body {
   width: 100%;
@@ -48,8 +57,10 @@ body::after {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: max(env(safe-area-inset-top), 8px);
+  padding-right: clamp(8px, 1.5vw, 16px);
+  padding-bottom: max(env(safe-area-inset-bottom), 8px);
+  padding-left: clamp(8px, 1.5vw, 16px);
   animation: sceneFlicker 0.15s steps(1) 0.1s both;
 }
 
@@ -70,7 +81,18 @@ body::after {
 
 #morpheus-wrap {
   position: relative;
-  width: min(720px, 100%);
+  width: min(
+    720px,
+    100%,
+    max(96px, calc((100vh - var(--scene-headroom)) * var(--scene-ratio)))
+  );
+  width: min(
+    720px,
+    100%,
+    max(96px, calc((100dvh - var(--scene-headroom)) * var(--scene-ratio)))
+  );
+  max-width: 720px;
+  margin-inline: auto;
   flex-shrink: 0;
 }
 
@@ -99,13 +121,13 @@ body::after {
 }
 
 #btn-blue {
-  left: 18%;
-  top: 84.5%;
+  left: var(--pill-blue-x);
+  top: var(--pill-y);
 }
 
 #btn-red {
-  left: 82%;
-  top: 84.5%;
+  left: var(--pill-red-x);
+  top: var(--pill-y);
 }
 
 .pill-btn img {
@@ -137,12 +159,12 @@ body::after {
 
 #speech-wrap {
   position: absolute;
-  top: clamp(-132px, -17vw, -92px);
+  top: clamp(-108px, -15vh, -78px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
   animation: fadeUp 1.2s ease 0.4s both;
-  width: min(90vw, 560px);
+  width: min(560px, 92%);
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -223,7 +245,7 @@ body::after {
 
 .pill-bubble {
   position: absolute;
-  width: clamp(96px, 17vw, 178px);
+  width: clamp(96px, 22%, 178px);
   transform: translate(-50%, -100%);
   background: #e9f5ff;
   border: 3px solid #111;
@@ -240,14 +262,14 @@ body::after {
 }
 
 #hint-blue {
-  left: 18%;
-  top: 76.8%;
+  left: var(--pill-blue-x);
+  top: var(--hint-y);
   background: #cde6ff;
 }
 
 #hint-red {
-  left: 82%;
-  top: 76.8%;
+  left: var(--pill-red-x);
+  top: var(--hint-y);
   background: #ffd2d2;
 }
 
@@ -278,29 +300,25 @@ body::after {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --pill-blue-x: 20%;
+    --pill-red-x: 80%;
+    --pill-y: 84.8%;
+    --hint-y: 76%;
+  }
+
   #stage {
     justify-content: flex-end;
     padding-bottom: max(env(safe-area-inset-bottom), 14px);
   }
 
   #morpheus-wrap {
-    width: min(640px, 100%);
     margin: 0 auto;
   }
 
   #speech-wrap {
-    top: clamp(-128px, -26vw, -90px);
-    width: min(92vw, 520px);
-  }
-
-  #btn-blue {
-    left: 18.9%;
-    top: 84.9%;
-  }
-
-  #btn-red {
-    left: 81.1%;
-    top: 84.9%;
+    top: clamp(-98px, -14vh, -72px);
+    width: min(520px, 94%);
   }
 
   .pill-btn {
@@ -311,18 +329,8 @@ body::after {
     width: 68%;
   }
 
-  #hint-blue {
-    left: 18.9%;
-    top: 76.1%;
-  }
-
-  #hint-red {
-    left: 81.1%;
-    top: 76.1%;
-  }
-
   .pill-bubble {
-    width: clamp(110px, 27vw, 156px);
+    width: clamp(104px, 30%, 150px);
     font-size: clamp(0.74rem, 2.85vw, 1rem);
     padding: 6px 8px;
   }
@@ -334,23 +342,32 @@ body::after {
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --pill-blue-x: 22.5%;
+    --pill-red-x: 77.5%;
+    --pill-y: 84.4%;
+    --hint-y: 75.2%;
+  }
+
+  .pill-bubble {
+    width: clamp(78px, 34%, 118px);
+    font-size: clamp(0.64rem, 3.3vw, 0.88rem);
+    padding: 5px 6px;
+    border-width: 2px;
+  }
+}
+
 @media (max-width: 420px) {
-  #morpheus-wrap {
-    width: min(640px, 100%);
+  :root {
+    --pill-blue-x: 23.5%;
+    --pill-red-x: 76.5%;
+    --pill-y: 84.1%;
+    --hint-y: 74.8%;
   }
 
   #speech-wrap {
-    top: clamp(-118px, -27vw, -92px);
-  }
-
-  #btn-blue {
-    left: 19.3%;
-    top: 84.7%;
-  }
-
-  #btn-red {
-    left: 80.7%;
-    top: 84.7%;
+    top: clamp(-92px, -13vh, -66px);
   }
 
   .pill-btn {
@@ -361,20 +378,78 @@ body::after {
     width: 64%;
   }
 
-  #hint-blue {
-    left: 19.3%;
-    top: 75.7%;
-  }
-
-  #hint-red {
-    left: 80.7%;
-    top: 75.7%;
-  }
-
   .pill-bubble {
-    width: clamp(100px, 29vw, 142px);
+    width: clamp(96px, 32%, 136px);
     font-size: clamp(0.7rem, 2.95vw, 0.92rem);
     padding: 5px 7px;
     border-width: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --pill-blue-x: 24.5%;
+    --pill-red-x: 75.5%;
+    --pill-y: 84%;
+    --hint-y: 74.4%;
+  }
+
+  .pill-bubble {
+    width: clamp(72px, 36%, 104px);
+    font-size: clamp(0.6rem, 3.4vw, 0.82rem);
+    padding: 4px 5px;
+  }
+}
+
+@media (max-height: 700px) {
+  :root {
+    --scene-headroom: clamp(120px, 20vh, 160px);
+    --pill-y: 84%;
+    --hint-y: 75.8%;
+  }
+
+  #speech-wrap {
+    top: clamp(-90px, -13vh, -64px);
+  }
+
+  .bubble-text {
+    font-size: clamp(0.94rem, 2.1vw, 1.2rem);
+  }
+}
+
+@media (max-height: 560px) {
+  :root {
+    --scene-headroom: clamp(96px, 18vh, 124px);
+    --pill-y: 83.7%;
+    --hint-y: 74.6%;
+  }
+
+  #speech-wrap {
+    top: clamp(-74px, -11vh, -54px);
+  }
+
+  .bubble {
+    border-width: 2px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 #111;
+    padding: clamp(6px, 1.1vw, 10px) clamp(12px, 2.2vw, 18px);
+  }
+
+  .bubble::before {
+    bottom: -14px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 14px;
+  }
+
+  .bubble::after {
+    bottom: -10px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 11px;
+  }
+
+  .bubble-text {
+    font-size: clamp(0.86rem, 1.9vw, 1.06rem);
   }
 }

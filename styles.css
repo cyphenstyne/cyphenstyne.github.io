@@ -1,3 +1,6 @@
+/* @import must always be at the very top of a CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +20,6 @@ html, body {
 }
 
 body {
-  /* Frutiger Aero signature gradient background: sky blue to ocean blue with a hint of green */
   background: linear-gradient(135deg, #a1e2f5 0%, #1e83c7 50%, #0c578f 100%);
   background-attachment: fixed;
   color: #ffffff;
@@ -25,7 +27,6 @@ body {
   position: relative;
 }
 
-/* Light flares / aurora borealis effect */
 body::before {
   content: "";
   position: fixed;
@@ -63,6 +64,17 @@ body::before {
   padding: 0 16px;
 }
 
+.pirata-font {
+  font-family: 'Pirata One', system-ui;
+  font-weight: 400;
+}
+
+/* Inherits the exact same font stack used globally so headings match */
+.heading-font {
+  font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif; 
+  font-weight: 300; /* Forces the browser to use the "Light" variant of Segoe UI */
+}
+
 .roller {
   display: inline-flex; 
   height: 1.2em;
@@ -85,11 +97,11 @@ body::before {
   100%      { transform: translateY(0); }
 }
 
-.content h2 {
+/* Combined h1 and h2 rules to eliminate duplicate code */
+.content h1, .content h2 {
   font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 300;
   text-align: center;
-  /* Glassy glowing text */
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
                0 0 20px rgba(255, 255, 255, 0.5),
@@ -98,30 +110,11 @@ body::before {
   padding: 0 16px;
 }
 
-.content h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
-  font-weight: 300;
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
-               0 0 20px rgba(255, 255, 255, 0.5),
-               0 0 40px rgba(161, 226, 245, 0.4);
-  letter-spacing: -2px;
-  padding: 0 16px;
-}
-
 @media (max-width: 768px) {
-  .home-text {
-    gap: 8px;
-  }
+  .home-text { gap: 8px; }
 }
 
 @media (max-width: 480px) {
-  .home-text {
-    gap: 6px;
-  }
-
-  .roller {
-    margin-left: 6px;
-  }
+  .home-text { gap: 6px; }
+  .roller { margin-left: 6px; }
 }

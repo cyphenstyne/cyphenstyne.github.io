@@ -1,12 +1,9 @@
-/* @import must always be at the very top of a CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   border: none;
   text-decoration: none;
-  font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -14,107 +11,51 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
-  background: linear-gradient(135deg, #a1e2f5 0%, #1e83c7 50%, #0c578f 100%);
-  background-attachment: fixed;
-  color: #ffffff;
-  overflow-x: hidden;
-  position: relative;
+  background: #1E201F;
+  color: #1D6C61;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: 
-    radial-gradient(circle at 30% 20%, rgba(200, 255, 220, 0.4) 0%, transparent 40%),
-    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
+.nav_bar_section {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  justify-content: center; 
+  z-index: 100; 
+}
+
+.pill_nav {
+  display: flex;
+  gap: 30px;
+  background: #2C2F2E; 
+  padding: 15px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pill_nav a {
+  color: #1D6C61;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.pill_nav a:hover {
+  color: #3EB9A8; 
+}
+
+.content_section {
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center; 
+  justify-content: center; 
 }
 
-.home-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  font-size: clamp(1.8rem, 5vw, 3.5rem);
-  font-weight: 700;
-  text-align: center;
-  color: white;
-  line-height: 1.2;
-  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5),
-               0 0 10px rgba(255, 255, 255, 0.4);
-  padding: 0 16px;
-}
-
-.pirata-font {
-  font-family: 'Pirata One', system-ui;
-  font-weight: 400;
-}
-
-/* Inherits the exact same font stack used globally so headings match */
-.heading-font {
-  font-family: 'Segoe UI', 'Frutiger', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif; 
-  font-weight: 300; /* Forces the browser to use the "Light" variant of Segoe UI */
-}
-
-.roller {
-  display: inline-flex; 
-  height: 1.2em;
-  overflow: hidden;
-  vertical-align: bottom; 
-  margin-left: 10px;
-  text-align: left;
-}
-
-.roller-inner {
-  display: flex;
-  flex-direction: column;
-  animation: roll 8s infinite;
-}
-
-@keyframes roll {
-  0%, 25%   { transform: translateY(0); }
-  33.33%, 58.33% { transform: translateY(-1.2em); }
-  66.66%, 91.66% { transform: translateY(-2.4em); }
-  100%      { transform: translateY(0); }
-}
-
-/* Combined h1 and h2 rules to eliminate duplicate code */
-.content h1, .content h2 {
-  font-size: clamp(2rem, 6vw, 5rem);
-  font-weight: 300;
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 
-               0 0 20px rgba(255, 255, 255, 0.5),
-               0 0 40px rgba(161, 226, 245, 0.4);
-  letter-spacing: -2px;
-  padding: 0 16px;
-}
-
-@media (max-width: 768px) {
-  .home-text { gap: 8px; }
-}
-
-@media (max-width: 480px) {
-  .home-text { gap: 6px; }
-  .roller { margin-left: 6px; }
-}
+#home { background: #1E201F; }
+#portfolio { background: #252827; }
+#blogs { background: #1E201F; }

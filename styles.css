@@ -1,61 +1,91 @@
+:root{
+  --body_bg_color: #8BB9C1;
+  --regular_text_color: #7F5B88;
+  --cv_link_color: #564A70;
+  --navbar_body_color: #34283F;
+  --navbar_text_color: #BDDEDD;
+  --navbar_hover_text_color: #8BB9C1;
+  --navbar_shadow_color: #7F5B88;
+}
+
+.fira-sans-semibold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.pirata-one-regular {
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   border: none;
   text-decoration: none;
-  font-family: Arial, sans-serif;
+  font-family: "Fira Sans", sans-serif;
   box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  background: #1E201F;
-  color: #1D6C61;
+  background: var(--body_bg_color);
+  color: var(--regular_text_color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .nav_bar_section {
-  position: sticky;
-  top: 20px;
   display: flex;
   justify-content: center; 
-  z-index: 100; 
+  align-items: center;
+  height: 10%;
 }
 
 .pill_nav {
   display: flex;
   gap: 30px;
-  background: #2C2F2E; 
-  padding: 15px 40px;
+  background: var(--navbar_body_color); 
+  padding: 12px 40px;
   border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px var(--navbar_shadow_color);
 }
 
 .pill_nav a {
-  color: #1D6C61;
+  color: var(--navbar_text_color);
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 .pill_nav a:hover {
-  color: #3EB9A8; 
+  color: var(--navbar_hover_text_color); 
 }
 
 .content_section {
-  display: flex;
-  flex-direction: column;
+  height: 90%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--regular_text_color) transparent;
 }
 
 .content {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   align-items: center; 
   justify-content: center; 
 }
-
-#home { background: #1E201F; }
-#portfolio { background: #252827; }
-#blogs { background: #1E201F; }

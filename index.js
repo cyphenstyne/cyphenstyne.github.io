@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnIntro = document.getElementById("intro");
-    const btnBeyond = document.getElementById("beyond");
+    const btnIntro = document.getElementById("intro_btn");
+    const btnBeyond = document.getElementById("beyond_btn");
     const slider = document.getElementById("home_slider");
 
     btnIntro.addEventListener("click", () => {

@@ -20,6 +20,7 @@
             packages = with pkgs; [
               deno
 	      nixd
+	      nil
             ];
             shellHook = ''
               echo "$(deno --version | head -n 1)"

@@ -19,6 +19,7 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               deno
+	      nil
             ];
             shellHook = ''
               echo "$(deno --version | head -n 1)"

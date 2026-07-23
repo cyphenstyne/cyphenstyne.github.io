@@ -42,7 +42,8 @@ html {
 body {
   background: var(--body_bg_color);
   color: var(--regular_text_color);
-  height: 100vh;
+  height: 100vh; /* Fallback for older browsers */
+  height: 100dvh; /* Adapts dynamically to mobile browser UI */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -78,11 +79,11 @@ body {
 }
 
 .content_section {
-  height: 90%;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--regular_text_color) transparent;
+  flex: 1; 
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--regular_text_color) transparent;
 }
 
 .content {
@@ -96,10 +97,10 @@ body {
 
 .nav_section {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0; 
+    flex-shrink: 0;
 }
 
 .nav_section button {

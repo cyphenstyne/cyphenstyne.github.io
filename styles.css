@@ -80,10 +80,10 @@ body {
 
 .content_section {
   flex: 1; 
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--regular_text_color) transparent;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--regular_text_color) transparent;
 }
 
 .content {
@@ -97,10 +97,10 @@ body {
 
 .nav_section {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0; 
-    flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0; 
+  flex-shrink: 0;
 }
 
 .nav_section button {
@@ -124,6 +124,7 @@ body {
 
 .separator {
   color: var(--regular_text_color);
+  margin: 0 20px;
 }
 
 .slider_viewport {

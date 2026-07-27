@@ -1,10 +1,10 @@
 :root {
-  --body_bg_color: #51367b;
-  --regular_text_color: #eadba0;
-  --cv_link_color: #564a70;
-  --navbar_body_color: #34283f;
-  --navbar_text_color: #eadba0;
-  --navbar_hover_text_color: #baa965;
+  --body_bg_color: #5a5b9f;
+  --regular_text_color: #ea6b6a;
+  --highlighted_text_color: #c0c673;
+  --navbar_body_color: #151515;
+  --navbar_text_color: #96143b;
+  --navbar_hover_text_color: #fc194a;
   --navbar_shadow_color: #1a1122;
 }
 
@@ -149,38 +149,4 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-.pfp img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: solid var(--regular_text_color);
-}
-
-.social_medias {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.social_btn {
-  display: inline-flex;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  outline: none;
-}
-
-.social_btn:hover,
-.social_btn:focus-visible {
-  transform: translateY(-3px);
-  opacity: 0.7;
-}
-
-.social_btn img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
 }

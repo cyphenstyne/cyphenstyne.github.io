@@ -2,10 +2,11 @@
   --body_bg_color: #210b2c;
   --regular_text_color: #bc96e6;
   --highlighted_text_color: #ffd166;
-  --navbar_body_color: #151515;
-  --navbar_text_color: #96143b;
-  --navbar_hover_text_color: #fc194a;
-  --navbar_shadow_color: #1a1122;
+  --selector_click_text: #856aa3;
+  --navbar_body_color: #112250;
+  --navbar_text_color: #e0c58f;
+  --navbar_click_text_color: #948465;
+  --navbar_shadow_color: #000000;
 }
 
 .fira-sans-semibold {
@@ -49,34 +50,7 @@ body {
   overflow: hidden;
 }
 
-.nav_bar_section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10%;
-}
-
-.nav_bar {
-  display: flex;
-  gap: 30px;
-  background: var(--navbar_body_color);
-  padding: 12px 40px;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px var(--navbar_shadow_color);
-}
-
-.nav_bar a {
-  color: var(--navbar_text_color);
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  border: none;
-  outline: none;
-}
-
-.nav_bar a:hover {
-  color: var(--navbar_hover_text_color);
-}
+/*Main: the content part*/
 
 .content_section {
   flex: 1; 
@@ -100,7 +74,7 @@ body {
   text-decoration-line: underline;
 }
 
-.nav_section {
+.selector {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +82,7 @@ body {
   flex-shrink: 0;
 }
 
-.nav_section button {
+.selector button {
   background: none;
   color: var(--regular_text_color);
   font-size: 1.2rem;
@@ -119,11 +93,11 @@ body {
   outline: none;
 }
 
-.nav_section button:hover {
-  color: var(--navbar_hover_text_color);
+.selector button:active {
+  color: var(--selector_click_text);
 }
 
-.nav_section button.active {
+.selector button.active {
   border-bottom: 2px solid var(--regular_text_color);
 }
 
@@ -154,4 +128,35 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+/*Main: The nav bar part*/
+
+.nav_bar_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.nav_bar {
+  display: flex;
+  gap: 30px;
+  background: var(--navbar_body_color);
+  padding: 12px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px var(--navbar_shadow_color);
+}
+
+.nav_bar a {
+  color: var(--navbar_text_color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.nav_bar a:active {
+  color: var(--navbar_click_text_color);
 }

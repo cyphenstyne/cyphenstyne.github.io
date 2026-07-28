@@ -1,7 +1,7 @@
 :root {
-  --body_bg_color: #5a5b9f;
-  --regular_text_color: #ea6b6a;
-  --highlighted_text_color: #c0c673;
+  --body_bg_color: #210b2c;
+  --regular_text_color: #bc96e6;
+  --highlighted_text_color: #ffd166;
   --navbar_body_color: #151515;
   --navbar_text_color: #96143b;
   --navbar_hover_text_color: #fc194a;
@@ -42,8 +42,8 @@ html {
 body {
   background: var(--body_bg_color);
   color: var(--regular_text_color);
-  height: 100vh; /* Fallback for older browsers */
-  height: 100dvh; /* Adapts dynamically to mobile browser UI */
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -93,6 +93,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.highlighted{
+  color: var(--highlighted_text_color);
+  text-decoration-line: underline;
 }
 
 .nav_section {

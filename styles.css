@@ -3,15 +3,36 @@
   --regular_text_color: #bc96e6;
   --highlighted_text_color: #ffd166;
   --selector_click_text: #856aa3;
-  --navbar_body_color: #112250;
-  --navbar_text_color: #e0c58f;
-  --navbar_click_text_color: #948465;
+  --navbar_body_color: #30305b;
+  --navbar_text_color: #8c7dc2;
+  --navbar_click_text_color: #685d8f;
   --navbar_shadow_color: #000000;
 }
 
-.fira-sans-semibold {
+/*font characteristics*/
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.fira-sans-regular {
   font-family: "Fira Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -21,11 +42,7 @@
   font-style: normal;
 }
 
-.space-mono-bold {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
+/*global proparties*/
 
 * {
   margin: 0;
@@ -50,7 +67,7 @@ body {
   overflow: hidden;
 }
 
-/*Main: the content part*/
+/*The actual content portion*/
 
 .content_section {
   flex: 1; 
@@ -67,11 +84,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.highlighted{
-  color: var(--highlighted_text_color);
-  text-decoration-line: underline;
 }
 
 .selector {
@@ -91,10 +103,6 @@ body {
   transition: color 0.3s ease;
   border: none;
   outline: none;
-}
-
-.selector button:active {
-  color: var(--selector_click_text);
 }
 
 .selector button.active {
@@ -127,10 +135,40 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 20px;  
 }
 
-/*Main: The nav bar part*/
+.my_intro{
+  font-size: x-large;
+}
+
+.highlighted{
+  color: var(--highlighted_text_color);
+  text-decoration-line: underline;
+  font-style: oblique;
+}
+
+#build {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+#deploy {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+#scale {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+.identity {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 15px;
+}
+
+/*The nav bar portion*/
 
 .nav_bar_section {
   display: flex;

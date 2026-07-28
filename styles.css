@@ -1,16 +1,38 @@
 :root {
-  --body_bg_color: #51367b;
-  --regular_text_color: #eadba0;
-  --cv_link_color: #564a70;
-  --navbar_body_color: #34283f;
-  --navbar_text_color: #eadba0;
-  --navbar_hover_text_color: #baa965;
-  --navbar_shadow_color: #1a1122;
+  --body_bg_color: #210b2c;
+  --regular_text_color: #bc96e6;
+  --highlighted_text_color: #ffd166;
+  --selector_click_text: #856aa3;
+  --navbar_body_color: #30305b;
+  --navbar_text_color: #8c7dc2;
+  --navbar_click_text_color: #685d8f;
+  --navbar_shadow_color: #000000;
 }
 
-.fira-sans-semibold {
+/*font characteristics*/
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: oblique;
+}
+
+.fira-sans-regular {
   font-family: "Fira Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -20,11 +42,7 @@
   font-style: normal;
 }
 
-.space-mono-bold {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
+/*global proparties*/
 
 * {
   margin: 0;
@@ -42,41 +60,14 @@ html {
 body {
   background: var(--body_bg_color);
   color: var(--regular_text_color);
-  height: 100vh; /* Fallback for older browsers */
-  height: 100dvh; /* Adapts dynamically to mobile browser UI */
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.nav_bar_section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10%;
-}
-
-.nav_bar {
-  display: flex;
-  gap: 30px;
-  background: var(--navbar_body_color);
-  padding: 12px 40px;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px var(--navbar_shadow_color);
-}
-
-.nav_bar a {
-  color: var(--navbar_text_color);
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  border: none;
-  outline: none;
-}
-
-.nav_bar a:hover {
-  color: var(--navbar_hover_text_color);
-}
+/*The actual content portion*/
 
 .content_section {
   flex: 1; 
@@ -95,7 +86,7 @@ body {
   justify-content: center;
 }
 
-.nav_section {
+.selector {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +94,7 @@ body {
   flex-shrink: 0;
 }
 
-.nav_section button {
+.selector button {
   background: none;
   color: var(--regular_text_color);
   font-size: 1.2rem;
@@ -114,11 +105,7 @@ body {
   outline: none;
 }
 
-.nav_section button:hover {
-  color: var(--navbar_hover_text_color);
-}
-
-.nav_section button.active {
+.selector button.active {
   border-bottom: 2px solid var(--regular_text_color);
 }
 
@@ -148,39 +135,66 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 20px;  
 }
 
-.pfp img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: solid var(--regular_text_color);
+.my_intro{
+  font-size: x-large;
 }
 
-.social_medias {
+.highlighted{
+  color: var(--highlighted_text_color);
+  text-decoration-line: underline;
+  font-style: oblique;
+}
+
+#build {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+#deploy {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+#scale {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+.identity {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 15px;
+}
+
+/*The nav bar portion*/
+
+.nav_bar_section {
   display: flex;
-  gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  height: 10%;
 }
 
-.social_btn {
-  display: inline-flex;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.nav_bar {
+  display: flex;
+  gap: 30px;
+  background: var(--navbar_body_color);
+  padding: 12px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px var(--navbar_shadow_color);
+}
+
+.nav_bar a {
+  color: var(--navbar_text_color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  border: none;
   outline: none;
 }
 
-.social_btn:hover,
-.social_btn:focus-visible {
-  transform: translateY(-3px);
-  opacity: 0.7;
-}
-
-.social_btn img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+.nav_bar a:active {
+  color: var(--navbar_click_text_color);
 }

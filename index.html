@@ -6,7 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat&family=Fira+Sans&family=Pirata+One&family=Playfair+Display:ital@1&family=Space+Mono:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="css/home_section.css" />
+    <link rel="stylesheet" href="css/portfolio_section.css" />
   </head>
   <body>
 
@@ -57,7 +59,77 @@
 
       <!--portfolio section-->
       <section id="portfolio" class="content">
-        <h1>Portfolio</h1>
+        <div class="portfolio_navigation">
+          <button id="port_prev_btn" class="nav_arrow" style="visibility: hidden;">&#10094;</button>
+          <h2 id="portfolio_title" class="playfair-display">Projects</h2>
+          <button id="port_next_btn" class="nav_arrow">&#10095;</button>
+        </div>
+        
+        <div class="slider_viewport portfolio_viewport">
+          <div class="slider_track" id="portfolio_slider">
+            
+            <!-- Projects Section -->
+            <div class="slide port_slide">
+              <input type="text" id="project_search" placeholder="Search type of projects..." autocomplete="off">
+              <div class="project_list" id="project_list">
+                <a href="https://github.com/cyphenstyne" target="_blank" class="project_card">
+                  <svg class="github_icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <div class="project_info">
+                    <h3>Whale Hunter</h3>
+                    <p>React frontend application tracking high-value cryptocurrency transactions utilising infinite scroll.</p>
+                  </div>
+                </a>
+                <a href="https://github.com/cyphenstyne" target="_blank" class="project_card">
+                  <svg class="github_icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <div class="project_info">
+                    <h3>Online Bookstore MVC</h3>
+                    <p>Full-stack Java web application leveraging Apache Tomcat, Servlets, Maven, and PostgreSQL.</p>
+                  </div>
+                </a>
+                <a href="https://github.com/cyphenstyne" target="_blank" class="project_card">
+                  <svg class="github_icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <div class="project_info">
+                    <h3>Automated Weather Tracker</h3>
+                    <p>Data tracking pipeline configured with AWS Lambda and DynamoDB.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+        
+            <!-- Certifications Section -->
+            <div class="slide port_slide">
+              <div class="cert_grid">
+                <div class="cert_card">Certification 1</div>
+                <div class="cert_card">Certification 2</div>
+                <div class="cert_card">Certification 3</div>
+                <div class="cert_card">Certification 4</div>
+              </div>
+            </div>
+        
+            <!-- Tech Stack Section -->
+            <div class="slide port_slide">
+              <div class="tech_stack_container">
+                <p><strong>Programming Languages:</strong> Java &bull; JavaScript &bull; TypeScript &bull; HTML5 &bull; CSS3</p>
+                <p><strong>Frontend:</strong> React</p>
+                <p><strong>Backend:</strong> Spring Boot &bull; Servlets &bull; REST API Development</p>
+                <p><strong>Databases:</strong> PostgreSQL &bull; DynamoDB</p>
+                <p><strong>Cloud:</strong> AWS (Lambda, DynamoDB)</p>
+                <p><strong>Environment & DevOps:</strong> Docker &bull; Podman &bull; Distrobox &bull; Nix Flakes</p>
+                <p><strong>Tools & Platforms:</strong> Git &bull; GitHub &bull; Linux (Arch, NixOS) &bull; Neovim &bull; Maven</p>
+              </div>
+            </div>
+        
+            <!-- Research Paper Section -->
+            <div class="slide port_slide">
+              <div class="paper_card">
+                <h3>Paper Title</h3>
+                <hr class="paper_divider">
+                <p>Short description delineating the scope and findings of the research paper.</p>
+              </div>
+            </div>
+        
+          </div>
+        </div>
       </section>
 
       <!--blogs section-->
@@ -76,6 +148,7 @@
       </nav>
     </div>
     
-    <script src="slider.js" defer></script>
+    <script src="./scripts/slider.js" defer></script>
+    <script src="./scripts/portfolio_section_slider.js" defer></script>
   </body>
 </html>

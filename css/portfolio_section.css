@@ -1,0 +1,156 @@
+/* Portfolio Navigation Header */
+.portfolio_navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.portfolio_navigation h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--regular_text_color);
+  padding-bottom: 5px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.nav_arrow {
+  background: var(--navbar_body_color);
+  color: var(--regular_text_color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav_arrow:hover {
+  background: var(--navbar_click_text_color);
+}
+
+/* Portfolio Slider Configuration */
+.portfolio_viewport {
+  width: 90%;
+  max-width: 700px;
+}
+
+/* overriding the width to accommodate 4 slides (400%) */
+#portfolio_slider {
+  width: 400%; 
+}
+
+.port_slide {
+  width: 25%; /* 100% / 4 slides */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Projects Layout */
+#project_search {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--selector_click_text);
+  background: var(--navbar_body_color);
+  color: var(--regular_text_color);
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.project_list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.project_card {
+  display: flex;
+  align-items: center;
+  background: var(--navbar_body_color);
+  border: 1px solid var(--selector_click_text);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.project_card:hover {
+  transform: scale(1.02);
+}
+
+.github_icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-right: 15px;
+  color: var(--regular_text_color);
+}
+
+.project_info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--highlighted_text_color);
+}
+
+.project_info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Certifications Layout */
+.cert_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.cert_card {
+  aspect-ratio: 1 / 1;
+  background: var(--navbar_body_color);
+  border: 1px solid var(--selector_click_text);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Tech Stack Layout */
+.tech_stack_container {
+  text-align: left;
+  width: 100%;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.tech_stack_container strong {
+  color: var(--highlighted_text_color);
+}
+
+/* Research Paper Layout */
+.paper_card {
+  background: var(--navbar_body_color);
+  border: 1px solid var(--selector_click_text);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.paper_card h3 {
+  color: var(--highlighted_text_color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.paper_divider {
+  border-top: 1px solid var(--selector_click_text);
+  margin-bottom: 10px;
+}

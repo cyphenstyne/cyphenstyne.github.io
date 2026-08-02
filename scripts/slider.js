@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnBeyond = document.getElementById("beyond_btn");
     const slider = document.getElementById("home_slider");
 
-    // Ascertain that all requisite elements are present in the DOM
     if (!btnIntro || !btnBeyond || !slider) {
         console.warn("Required DOM elements for the slider are absent.");
         return;
